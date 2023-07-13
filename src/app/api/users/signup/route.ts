@@ -13,10 +13,18 @@ export async function POST(request: NextRequest) {
         const reqBody = await request.json();
         console.log(reqBody);
         const { username, email, password } = reqBody;
-
+        if (!username) {
+            return NextResponse.json({ error: "username required" })
+        }
+        if (!password) {
+            return NextResponse.json({ error: "password required" })
+        }
+        if (!email) {
+            return NextResponse.json({ error: "email required" })
+        }
         /** check if user already exists */
         const existsUser = await User.findOne({ email })
-        console.log(existsUser)
+
         if (existsUser) {
             return NextResponse.json({ error: "User already exists" }, { status: 400 })
         }
@@ -34,14 +42,14 @@ export async function POST(request: NextRequest) {
         console.log(savedUser);
 
         return NextResponse.json({
-            message: "User created successfullt",
+            message: "User created successfull",
             success: true,
             savedUser
         })
 
     } catch (error: any) {
         console.log(error);
-        
+
         return NextResponse.json({ error: error.message }, { status: 500 })
     }
 }

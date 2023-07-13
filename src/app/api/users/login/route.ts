@@ -12,9 +12,14 @@ export async function POST(request: NextRequest) {
         const reqBody = await request.json();
         const { email, password } = await reqBody;
         console.log("user--------", reqBody);
-
+        if (!email) {
+            return NextResponse.json({ error: "email required" })
+        }
+        if (!password) {
+            return NextResponse.json({ error: "password required" })
+        }
         const user = await User.findOne({ email });
-        console.log("fetched user-----------", user)    
+        console.log("fetched user-----------", user)
         if (!user) {
             return NextResponse.json({ error: "User does not exists" }, { status: 400 })
         }

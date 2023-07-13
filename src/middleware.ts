@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
     // return NextResponse.redirect(new URL('/home', request.url))
     const path = request.nextUrl.pathname;
-    const isPublicPath = path === '/login' || path === '/signup'
+    const isPublicPath = path === '/login' || path === '/signup' || path === '/'
     /** test console */
     // console.log(path);
     // console.log(isPublicPath);
@@ -14,10 +14,10 @@ export function middleware(request: NextRequest) {
 
     const token = request.cookies.get('token')?.value || ''
     /** public path and token is available */
-    if (isPublicPath && token) {
+    if (!isPublicPath && !token) {
         return NextResponse.redirect(new URL("/", request.nextUrl))
-    } else if (!isPublicPath && !token) {
-        return NextResponse.redirect(new URL("/login", request.nextUrl))
+    } if (isPublicPath && token) {
+        return NextResponse.redirect(new URL("/profile", request.nextUrl))
     }
 
 }

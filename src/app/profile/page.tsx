@@ -30,7 +30,7 @@ const profile = () => {
         try {
             await axios.get('/api/users/logout')
             toast.success('Logout successful')
-            router.push('/login')
+            router.push('/')
         } catch (error: any) {
             console.log(error.response.data.error);
             toast.error(error.response.data.error)
@@ -43,8 +43,9 @@ const profile = () => {
                 position="top-center"
                 reverseOrder={false}
             />
-            <h1 className="font-extrabold">profile</h1>
-            <div className="max-w-sm font-extrabold  lg:max-w-full bg-slate-700 text-white text-lg p-5 rounded-md">
+            <div className="max-w-sm font-extrabold lg:max-w-full bg-slate-700 text-white text-lg p-5 rounded-md">
+                <h1 className="font-extrabold">profile</h1>
+                <hr />
                 <h2 key={user?.username}>username - {user?.username}</h2>
                 <h3 key={user?.email}>email - {user?.email}</h3>
             </div>
