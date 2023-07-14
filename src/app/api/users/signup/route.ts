@@ -3,6 +3,7 @@ import User from "@/models/user-model";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs"
 import dotenv from "dotenv"
+import { sendEmail } from "@/helpers/mailer";
 dotenv.config()
 
 connect();
@@ -40,6 +41,9 @@ export async function POST(request: NextRequest) {
         })
         const savedUser = await user.save();
         console.log(savedUser);
+
+        /** send email */
+        await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id })
 
         return NextResponse.json({
             message: "User created successfull",
