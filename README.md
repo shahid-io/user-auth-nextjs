@@ -1,4 +1,19 @@
+<<<<<<< HEAD
 # User Auth nextjs
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+=======
+# User Auth nextjs
+>>>>>>> ba90525 (Added)
+=======
+# User Auth nextjs and mongodb
+>>>>>>> ed128cb (Modified md file)
+>>>>>>> dev-shahid
 First, run the development server:
 
 ```bash
@@ -39,4 +54,8 @@ async function connect() {
   return mongo;
 }
 export default connect;
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> dev-shahid
