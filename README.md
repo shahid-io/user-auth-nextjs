@@ -1,6 +1,8 @@
 
 # User Auth Nextjs
 <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"></img>
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"></img>
+<img src=" 	https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username={shahid-io}"></img>
 First, run the development server:
 
 ```bash
