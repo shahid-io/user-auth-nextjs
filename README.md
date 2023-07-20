@@ -1,6 +1,6 @@
 
 # User Auth Nextjs
-https://camo.githubusercontent.com/3a092edcd6d57d9bd83ad74ba2cce29b6963102d3aa479817b75bcd60a304aab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6578742532306a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e657874646f746a73266c6f676f436f6c6f723d7768697465
+<i>https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white</i>
 First, run the development server:
 
 ```bash
