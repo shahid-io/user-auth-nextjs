@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
     // return NextResponse.redirect(new URL('/home', request.url))
     const path = request.nextUrl.pathname;
-    const isPublicPath = path === '/login' || path === '/signup' || path === '/'
+    const isPublicPath = path === '/login' || path === '/signup' || path === '/' || path === '/verifyEmail'
     /** test console */
     // console.log(path);
     // console.log(isPublicPath);
@@ -27,6 +27,7 @@ export const config = {
         '/',
         '/profile/:path*',
         '/login',
-        '/signup'
+        '/signup',
+        '/verifyEmail'
     ],
 }

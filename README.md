@@ -58,3 +58,6 @@ export default connect;
 =======
 ```
 >>>>>>> dev-shahid
+
+
+http://localhost:3000/verifyemail?token=$2a$10$TCKh7CnlnN31FhghqMvpHu1nu4QgaxpYQb812J8aydMRhFfgZoqY.

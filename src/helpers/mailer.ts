@@ -1,3 +1,4 @@
+
 import nodemailer from "nodemailer"
 import User from "@/models/user-model"
 import bcryptjs from "bcryptjs"
@@ -30,10 +31,10 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
             from: process.env.MAILTRAP_EMAIL_FROM,
             to: email,
             subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
-            html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a>
+            html: `<p>Click <a href="${process.env.DOMAIN}/verifyEmail?token=${hashedToken}">here</a>
                 to ${emailType === "VERIFY" ? "verify your email" : "reset your password"}</p>`
         }
-        const mailResponse = await transport.sendEmail(mailOptions);
+        const mailResponse = await transport.sendMail(mailOptions);
         return mailResponse;
 
     } catch (error: any) {
